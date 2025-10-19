@@ -1,6 +1,8 @@
 <template>
 <UContainer class="q-pa-md" margin: auto;>
   
+<h1 class=" text-3xl text-blue-900 uppercase">Calcolatore finanziamento auto</h1>
+
 <UInputNumber v-model="intertesse" placeholder="Interesse in %" class=" m-4"
 :step="0.01",
 :format-options="{
@@ -58,6 +60,12 @@
       minimumFractionDigits: 2,   
 }" readonly
 />  <p>Interesse maturato</p>
+
+
+<div class=" gap-4 mt-5">
+      <p>Il costo totale della vettura è di: <span class=" text-orange-700">{{ totaleCostVet.toLocaleString() }}€</span></p>
+      <p>L'interesse totale è di €: <span class=" text-orange-500">{{ totInteresse.toLocaleString() }}€</span></p>
+</div>
    
 </UContainer>
 
