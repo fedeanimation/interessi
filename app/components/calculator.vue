@@ -1,7 +1,8 @@
 <template>
 <UContainer class="q-pa-md" margin: auto;>
   
-<h1 class=" text-3xl text-blue-900 uppercase">Calcolatore interessi finanziamento</h1>
+<h1 class=" text-3xl text-blue-900 uppercase m-4">Calcolatore interessi finanziamento</h1>
+<UColorModeSelect class=" m-4"/>
 
 <div>
 <UInputNumber v-model="intertesse" placeholder="Interesse in %" class=" m-4"
@@ -13,7 +14,7 @@
 </div>
 
 <div>
-<UInputNumber v-model="prezzovettura" placeholder="prezzo del bene" class=" m-4"
+<UInputNumber v-model="prezzovettura" placeholder="prezzo del bene" class=" m-4" color="warning"
 :format-options="{
       style: 'currency',
       currency: 'EUR',
@@ -43,7 +44,7 @@
       style: 'decimal',
       minimumFractionDigits: 0,   
 }"/>
-<p>{{ giorniCalcolati }}</p>
+<p class="m-4">{{ giorniCalcolati }}</p>
 </div>
 
 
