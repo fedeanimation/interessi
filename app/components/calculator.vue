@@ -1,16 +1,19 @@
 <template>
 <UContainer class="q-pa-md" margin: auto;>
   
-<h1 class=" text-3xl text-blue-900 uppercase">Calcolatore finanziamento auto</h1>
+<h1 class=" text-3xl text-blue-900 uppercase">Calcolatore interessi finanziamento</h1>
 
+<div>
 <UInputNumber v-model="intertesse" placeholder="Interesse in %" class=" m-4"
 :step="0.01",
 :format-options="{
       minimumFractionDigits: 2,
 }" 
 />
+</div>
 
-<UInputNumber v-model="prezzovettura" placeholder="prezzo vettura" class=" m-4"
+<div>
+<UInputNumber v-model="prezzovettura" placeholder="prezzo del bene" class=" m-4"
 :format-options="{
       style: 'currency',
       currency: 'EUR',
@@ -29,18 +32,22 @@
       minimumFractionDigits: 1,   
 }" label="Capitale"
 />
+</div>
+
+<div>
+<UInputNumber v-model="anni" placeholder="Anni" class=" m-4"/> 
+
 
 <UInputNumber v-model="giorni" placeholder="Giorni" class=" m-4"
 :format-options="{
       style: 'decimal',
       minimumFractionDigits: 0,   
-}" label="Giorni"   
-/>
-
-<UInputNumber v-model="anni" placeholder="Anni" class=" m-4"/> 
+}"/>
 <p>{{ giorniCalcolati }}</p>
+</div>
 
 
+<div>
 <UInputNumber v-model="totaleCostVet" placeholder="Totale" class=" m-4"
 :format-options="{
       style: 'currency',
@@ -49,7 +56,7 @@
       currencySign: 'accounting',
       minimumFractionDigits: 2,   
 }" readonly
-/> <p>Totale costo vettura</p>
+/> Totale costo vettura
 
 <UInputNumber v-model="totInteresse" placeholder="Totale Interesse" class=" m-4"
 :format-options="{
@@ -59,11 +66,11 @@
       currencySign: 'accounting',
       minimumFractionDigits: 2,   
 }" readonly
-/>  <p>Interesse maturato</p>
+/>  Interesse maturato
+</div>
 
-
-<div class=" gap-4 mt-5">
-      <p>Il costo totale della vettura è di: <span class=" text-orange-700">{{ totaleCostVet.toLocaleString() }}€</span></p>
+<div class=" mt-5">
+      <p>Il costo totale della bene è di: <span class=" text-orange-700">{{ totaleCostVet.toLocaleString() }}€</span></p>
       <p>L'interesse totale è di €: <span class=" text-orange-500">{{ totInteresse.toLocaleString() }}€</span></p>
 </div>
    
